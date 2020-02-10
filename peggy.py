@@ -14,7 +14,7 @@ async def on_ready():
 async def on_message(message):
         if len(message.attachments) != 0:
             for attachment in message.attachments:
-                if attachment.filename.endswith("jpglarge") or attachment.filename.endswith("jpeglarge"):
+                if attachment.filename.endswith("jpglarge") or attachment.filename.endswith("jpeglarge") or attachment.filename.endswith("jpg-large") or attachment.filename.endswith("jpeg-large"):
                     async with aiohttp.ClientSession() as session:
                         async with session.get(attachment.url) as resp:
                             var = await resp.read()
